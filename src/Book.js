@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 
 class Book extends Component {
 	render() {
+		//Handle books with no thumbnail data
+		let bookThumb = this.props.book.imageLinks 
+				? this.props.book.imageLinks.thumbnail
+				: '';
+
 		return (
             <div className="book">
 	          <div className="book-top">
@@ -9,12 +14,13 @@ class Book extends Component {
 	            	style={{ 
 	            		width: 128,
 	            		height: 193, 
-	            		backgroundImage:`url('${this.props.book.imageLinks.thumbnail}')`
+	            		backgroundImage:`url('${bookThumb}')`
 	            	}}
 	            ></div>
 	            <div className="book-shelf-changer">
 	              <select
 					onChange={(e) => this.props.shelfChange(this.props.book, e.target.value)}
+					value={this.props.book.shelf}
 	              >
 	                <option value="move" disabled>Move to...</option>
 	                <option value="currentlyReading">Currently Reading</option>

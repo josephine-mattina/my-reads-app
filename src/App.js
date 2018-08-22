@@ -1,8 +1,8 @@
-import React from 'react'
-import ListBooks from './ListBooks'
-import SearchBooks from './SearchBooks'
-import * as BooksAPI from './BooksAPI'
-import './App.css'
+import React from 'react';
+import ListBooks from './ListBooks';
+import SearchBooks from './SearchBooks';
+import * as BooksAPI from './BooksAPI';
+import './App.css';
 
 class BooksApp extends React.Component {
     /**
@@ -33,11 +33,12 @@ class BooksApp extends React.Component {
   render() {
 
     return (
-      <div className="app">
-        <ListBooks
+      <div className='app'>
+        { /* <ListBooks
           books={this.state.books}
           shelfChange={this.shelfChange}
-        />
+        /> */}
+        <SearchBooks />
       </div>
     )
   }
