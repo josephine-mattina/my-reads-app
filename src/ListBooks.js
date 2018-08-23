@@ -61,7 +61,7 @@ class ListBooks extends Component {
 										<Book 
 											book={book}
 											shelfChange={this.props.shelfChange}
-											currentlyReading='read'
+											currentShelf='read'
 										/>
 				                    </li>
 	                    		))

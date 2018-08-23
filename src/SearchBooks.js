@@ -52,7 +52,7 @@ class SearchBooks extends Component {
 	              <ol className='books-grid'>
 	              	{/*  Display books that match user query */}
 	            	{this.state.searchedBooks.map(searchedBook => {
-	            		let defaultShelf='None';
+	            		let defaultShelf='none';
 	            	{/*  TODO - 2:37:58 check code */}
 	            		this.props.books.map(book => (
 	            			book.id === searchedBook.id
