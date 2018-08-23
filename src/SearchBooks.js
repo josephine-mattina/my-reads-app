@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
-import escapeRegExp from 'escape-string-regexp';
+import { Link } from 'react-router-dom';
 import * as BooksAPI from './BooksAPI';
 import Book from './Book';
 
@@ -18,11 +17,11 @@ class SearchBooks extends Component {
 		this.updateSearchedBooks(query);
 	}
 
-	// Get books that match user query
+	// Get books that match user search query
 	updateSearchedBooks = (query) => {
 		if (query) {
 			BooksAPI.search(query).then((searchedBooks) => {
-				{/* Handle errors if query is not found in SEARCH TERMS */}
+				// Handle errors if query is not found in SEARCH TERMS
 				if (searchedBooks.error) {
 					this.setState({ searchedBooks: [] });
 				} else {
@@ -55,7 +54,7 @@ class SearchBooks extends Component {
 	              	{/*  Display books that match user query */}
 	            	{this.state.searchedBooks.map(searchedBook => {
 	            		// TODO: store this.props.books in variable 
-		            	{/* Set the default shelf of searched books */}
+		            	// Set the default shelf of searched books
 	            		let defaultShelf='none';
 	            		this.props.books.map(book => (
 	            			book.id === searchedBook.id

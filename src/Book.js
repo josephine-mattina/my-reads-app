@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 
 class Book extends Component {
 	render() {
-		//Handle books with no thumbnail data
-		let bookThumb = this.props.book.imageLinks 
-				? this.props.book.imageLinks.thumbnail
+		const book = this.props.book;
+		//Handle books with no cover image
+		const bookCover = book.imageLinks 
+				? book.imageLinks.thumbnail
 				: '';
 
 		return (
@@ -14,12 +15,12 @@ class Book extends Component {
 	            	style={{ 
 	            		width: 128,
 	            		height: 193, 
-	            		backgroundImage:`url('${bookThumb}')`
+	            		backgroundImage:`url('${bookCover}')`
 	            	}}
 	            ></div>
 	            <div className="book-shelf-changer">
 	              <select
-					onChange={(e) => this.props.shelfChange(this.props.book, e.target.value)}
+					onChange={(e) => this.props.shelfChange(book, e.target.value)}
 					value={this.props.currentShelf}
 	              >
 	                <option value="move" disabled>Move to...</option>
@@ -30,8 +31,8 @@ class Book extends Component {
 	              </select>
 	            </div>
 	          </div>
-	          <div className="book-title">{this.props.book.title}</div>
-	          <div className="book-authors">{this.props.book.authors}</div>
+	          <div className="book-title">{book.title}</div>
+	          <div className="book-authors">{book.authors}</div>
 	        </div>
 		);
 	}
