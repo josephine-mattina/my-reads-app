@@ -4,6 +4,8 @@ import escapeRegExp from 'escape-string-regexp';
 import * as BooksAPI from './BooksAPI';
 import Book from './Book';
 
+// TODO: Change 'searchedBooks' variables - searchResults?
+// TODO: Change comments back to js?
 class SearchBooks extends Component {
 	// Search input settings
 	state = {
@@ -52,8 +54,9 @@ class SearchBooks extends Component {
 	              <ol className='books-grid'>
 	              	{/*  Display books that match user query */}
 	            	{this.state.searchedBooks.map(searchedBook => {
+	            		// TODO: store this.props.books in variable 
+		            	{/* Set the default shelf of searched books */}
 	            		let defaultShelf='none';
-	            	{/*  TODO - 2:37:58 check code */}
 	            		this.props.books.map(book => (
 	            			book.id === searchedBook.id
 	            			? defaultShelf = book.shelf

@@ -27,12 +27,18 @@ class BooksApp extends Component {
   }
 
   render() {
+    // Filter the books into shelf catagories to be passed as props to the ListBooks component
+    const currentlyReading = this.state.books.filter(book => book.shelf === 'currentlyReading');
+    const wantToRead = this.state.books.filter(book => book.shelf === 'wantToRead');
+    const read = this.state.books.filter(book => book.shelf === 'read');
 
     return (
       <div className='app'>
         <Route exact path='/' render={() => (
           <ListBooks
-            books={this.state.books}
+            currentlyReading={currentlyReading}
+            wantToRead={wantToRead}
+            read={read}
             shelfChange={this.shelfChange}
           />
         )}/>
