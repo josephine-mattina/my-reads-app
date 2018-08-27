@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import Shelf from './Shelf';
 
 class ListBooks extends Component {
@@ -11,19 +11,19 @@ class ListBooks extends Component {
 	            </div>
 	            <div className='list-books-content'>
 		            <div>
-		            	<Shelf 
+		            	<Shelf
 		            		title='Currently Reading'
 		            		shelf='currentlyReading'
 		            		books={ this.props.currentlyReading }
 		            		sortBooks={ this.props.sortBooks }
 		            	/>
-		            	<Shelf 
+		            	<Shelf
 		            		title='Want to Read'
 		            		shelf='wantToRead'
 		            		books={ this.props.wantToRead }
 		            		sortBooks={ this.props.sortBooks }
 		            	/>
-		            	<Shelf 
+		            	<Shelf
 		            		title='Read'
 		            		shelf='read'
 		            		books={ this.props.read }

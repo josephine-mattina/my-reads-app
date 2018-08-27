@@ -13,7 +13,7 @@ class BooksApp extends Component {
 
   updateState = () => {
     BooksAPI.getAll().then((books) => {
-      this.setState({ books })
+      this.setState({ books });
     })
   }
 
@@ -53,4 +53,4 @@ class BooksApp extends Component {
   }
 }
 
-export default BooksApp
+export default BooksApp;

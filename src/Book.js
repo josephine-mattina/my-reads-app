@@ -4,14 +4,14 @@ class Book extends Component {
 	render() {
 		const book = this.props.book;
 		//Handle books with no cover image
-		const bookCover = book.imageLinks 
+		const bookCover = book.imageLinks
 				? book.imageLinks.thumbnail
 				: '';
 
 		return (
             <div className="book">
 	          <div className="book-top">
-	            <div className="book-cover" 
+	            <div className="book-cover"
 	            	style={{ 
 	            		width: 128,
 	            		height: 193, 
