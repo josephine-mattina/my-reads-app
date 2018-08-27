@@ -90,3 +90,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
 
 For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Resources
+
+https://reactjs.org/docs/thinking-in-react.html
+https://stackoverflow.com/questions/28868071/onchange-event-using-react-js-for-drop-down
+[Linking the shelf component to the home page](https://knowledge.udacity.com/questions/7352)

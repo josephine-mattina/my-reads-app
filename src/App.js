@@ -21,7 +21,7 @@ class BooksApp extends Component {
     this.updateState();
   }
 
-  shelfChange = (book, shelf) => {
+  sortBooks = (book, shelf) => {
     BooksAPI.update(book, shelf);
     this.updateState();
   }
@@ -39,13 +39,13 @@ class BooksApp extends Component {
             currentlyReading={currentlyReading}
             wantToRead={wantToRead}
             read={read}
-            shelfChange={this.shelfChange}
+            sortBooks={this.sortBooks}
           />
         )}/>
         <Route path='/search' render={() => (
           <SearchBooks
             books={this.state.books}
-            shelfChange={this.shelfChange}
+            sortBooks={this.sortBooks}
           />
         )}/>
       </div>

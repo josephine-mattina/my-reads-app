@@ -3,33 +3,31 @@ import { Link } from 'react-router-dom';
 import * as BooksAPI from './BooksAPI';
 import Book from './Book';
 
-// TODO: Change 'searchedBooks' variables - searchResults?
-// TODO: Change comments back to js?
 class SearchBooks extends Component {
 	// Search input settings
 	state = {
 		query:'',
-		searchedBooks: []
+		searchResults: []
 	}
 
 	updateQuery = (query) => {
 		this.setState({ query })
-		this.updateSearchedBooks(query);
+		this.updateSearchResults(query);
 	}
 
 	// Get books that match user search query
-	updateSearchedBooks = (query) => {
+	updateSearchResults = (query) => {
 		if (query) {
-			BooksAPI.search(query).then((searchedBooks) => {
+			BooksAPI.search(query).then((searchResults) => {
 				// Handle errors if query is not found in SEARCH TERMS
-				if (searchedBooks.error) {
-					this.setState({ searchedBooks: [] });
+				if (searchResults.error) {
+					this.setState({ searchResults: [] });
 				} else {
-				    this.setState({ searchedBooks })
+				    this.setState({ searchResults })
 				}
 		    })
 		} else {
-			this.setState({ searchedBooks: [] });
+			this.setState({ searchResults: [] });
 		}
 	}
 
@@ -52,21 +50,20 @@ class SearchBooks extends Component {
 	            <div className='search-books-results'>
 	              <ol className='books-grid'>
 	              	{/*  Display books that match user query */}
-	            	{this.state.searchedBooks.map(searchedBook => {
-	            		// TODO: store this.props.books in variable 
-		            	// Set the default shelf of searched books
+	            	{this.state.searchResults.map(searchResult => {
+		            	// Set the default shelf of searched books. Based on study resource https://youtu.be/i6L2jLHV9j8
 	            		let defaultShelf='none';
 	            		this.props.books.map(book => (
-	            			book.id === searchedBook.id
+	            			book.id === searchResult.id
 	            			? defaultShelf = book.shelf
 	            			: ''
 	            		));
 
 	            		return (
-		            		<li key={searchedBook.id}>
+		            		<li key={searchResult.id}>
 		            			<Book
-		            				book={searchedBook}
-		            				shelfChange={this.props.shelfChange}
+		            				book={searchResult}
+		            				sortBooks={this.props.sortBooks}
 		            				currentShelf={defaultShelf}
 		            			/>
 		            		</li>

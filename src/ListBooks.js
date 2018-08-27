@@ -4,7 +4,6 @@ import Shelf from './Shelf';
 
 class ListBooks extends Component {
 	render() {
-		console.log(this.props.books)
 		return (
 	        <div className='list-books'>
 	            <div className='list-books-title'>
@@ -16,19 +15,19 @@ class ListBooks extends Component {
 		            		title='Currently Reading'
 		            		shelf='currentlyReading'
 		            		books={ this.props.currentlyReading }
-		            		shelfChange={ this.props.shelfChange }
+		            		sortBooks={ this.props.sortBooks }
 		            	/>
 		            	<Shelf 
 		            		title='Want to Read'
 		            		shelf='wantToRead'
 		            		books={ this.props.wantToRead }
-		            		shelfChange={ this.props.shelfChange }
+		            		sortBooks={ this.props.sortBooks }
 		            	/>
 		            	<Shelf 
 		            		title='Read'
 		            		shelf='read'
 		            		books={ this.props.read }
-		            		shelfChange={ this.props.shelfChange }
+		            		sortBooks={ this.props.sortBooks }
 		            	/>
 		            </div>
 	            </div>

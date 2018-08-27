@@ -14,7 +14,7 @@ class Shelf extends Component {
 		                    <li key={book.id}>
 								<Book 
 									book={book}
-									shelfChange={this.props.shelfChange}
+									sortBooks={this.props.sortBooks}
 								/>
 		                    </li>
 	            		))
