@@ -84,10 +84,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Resources used to build the app
 
-[Starter code](https://github.com/udacity/reactnd-project-myreads-starter)
-[Project rubric](https://review.udacity.com/#!/rubrics/918/view)
-[Project introduction]()
-[Thinking in React](https://reactjs.org/docs/thinking-in-react.html)
-[Linking the shelf component to the home page](https://knowledge.udacity.com/questions/7352)
-[Drop down onChange event](https://stackoverflow.com/questions/28868071/onchange-event-using-react-js-for-drop-down)
-[Troubleshooting shelf interactivity](https://youtu.be/i6L2jLHV9j8)
+- [Starter code](https://github.com/udacity/reactnd-project-myreads-starter)
+- [Project rubric](https://review.udacity.com/#!/rubrics/918/view)
+- [Project introduction]()
+- [Thinking in React](https://reactjs.org/docs/thinking-in-react.html)
+- [Linking the shelf component to the home page](https://knowledge.udacity.com/questions/7352)
+- [Drop down onChange event](https://stackoverflow.com/questions/28868071/onchange-event-using-react-js-for-drop-down)
+- [Troubleshooting shelf interactivity](https://youtu.be/i6L2jLHV9j8)
