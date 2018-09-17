@@ -16,14 +16,16 @@ class BooksApp extends Component {
       this.setState({ books });
     })
   }
-
+  
   componentDidMount() {
     this.updateState();
   }
 
   sortBooks = (book, shelf) => {
-    BooksAPI.update(book, shelf);
-    this.updateState();
+    BooksAPI.update(book, shelf)
+    .then(() =>
+      this.updateState()
+    )
   }
 
   render() {

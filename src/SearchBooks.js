@@ -48,7 +48,6 @@ class SearchBooks extends Component {
 	            </div>
 	            <div className='search-books-results'>
 	              <ol className='books-grid'>
-	              	{/*  Display books that match user query */}
 	            	{this.state.searchResults.map(searchResult => {
 		            	// Set the default shelf of searched books. Based on study resource https://youtu.be/i6L2jLHV9j8
 	            		let defaultShelf='none';
